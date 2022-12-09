@@ -224,7 +224,7 @@ const UpcomingRides = () => {
               <th>Aproved</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="tab down">
             {data.map((item, i) => (
               <tr key={i}>
                 <td>{item.job_id}</td>

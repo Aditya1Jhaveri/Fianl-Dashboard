@@ -140,16 +140,20 @@
 
   
   .dash{
-    margin-left: 60px;
-    /* margin-right: 50px; */
-    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 20px;
     
   }
 
 .tab{
-  position: fixed;
+  position:relative;
   width: 82.2%;
 }
+
+/* .tabdown{
+  margin-top: 100px;
+} */
 
   
 
