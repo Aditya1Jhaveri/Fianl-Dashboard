@@ -29,7 +29,7 @@ function Login() {
     // console.warn(result);
     //localStorage.setItem(JSON.stringify(result))
     //navigate('/dashboard');
-    window.location.href = "aditya";
+    window.location.href = "Navbar";
   }
   return (
     <div>

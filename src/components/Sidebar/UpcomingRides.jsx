@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// import './style.css'
+import './table.css'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -33,17 +33,14 @@ const UpcomingRides = () => {
   }
 
   return (
-    <div>
+    <>
+      <header>
       <Navbar />
+      </header>
       <Container>
         <Row>
-          <Col>
-            <h1> Users({data.length})</h1>
-          </Col>
-        </Row>
-        <Row>
-          <Col sm={12}>
-            <Table responsive variant="dark">
+          <Col lg={55}>
+            <Table>
               <thead>
                 <tr>
                   <th></th>
@@ -59,7 +56,7 @@ const UpcomingRides = () => {
                   <>
                     <tr key={user.id}>
                       <td>
-                        <img src={user['photo']} alt="" />
+                        {/* <img src={user['photo']} alt="C:\Users\sonip\OneDrive\Pictures\Pictures\Pho" /> */}
                       </td>
                       <td>{user['first_name']}</td>
                       <td>{user['last_name']}</td>
@@ -68,8 +65,9 @@ const UpcomingRides = () => {
 
                       <td>
                         <Button
-                          variant="link"
+                          // variant="link"
                           onClick={(event) => handleEpandRow(event, user.id)}
+                          
                         >
                           {expandState[user.id] ? 'Hide' : 'Show'}
                         </Button>
@@ -81,8 +79,8 @@ const UpcomingRides = () => {
                           <td colspan="6">
                             <div
                               style={{
-                                backgroundColor: '#343A40',
-                                color: '#FFF',
+                                backgroundColor: 'grey',
+                                color: 'white',
                                 padding: '10px',
                               }}
                             >
@@ -115,12 +113,12 @@ const UpcomingRides = () => {
                                   </span>{' '}
                                   <span> {user['ip_address']} </span>
                                 </li>
-                                <li>
+                                {/* <li>
                                   <span>
                                     <b>Best Movie:</b>
                                   </span>{' '}
                                   <span> {user.movies} </span>
-                                </li>
+                                </li> */}
                                 <li>
                                   <span>
                                     <b>About:</b>
@@ -140,7 +138,7 @@ const UpcomingRides = () => {
           </Col>
         </Row>
       </Container>
-    </div>
+    </>
   )
 }
 
