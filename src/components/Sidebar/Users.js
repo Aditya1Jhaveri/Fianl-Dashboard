@@ -1,5 +1,6 @@
 const data = [
   {
+    id:1,
     job_id: 'AHD4649',
     pickup_date_time: '23:00 Tue, 17 Sep, 2019',
     pickup_postcode: 'TW6 3XQ',
@@ -7,9 +8,10 @@ const data = [
     pickup_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     dropoff_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     service_type: 'Private',
-    drive_fare: 'Services',
+    drive_fare: '10.5$',
   },
   {
+    id:2,
     job_id: 'AHD4649',
     pickup_date_time: '23:00 Tue, 17 Sep, 2019',
     pickup_postcode: 'TW6 3XQ',
@@ -17,10 +19,11 @@ const data = [
     pickup_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     dropoff_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     service_type: 'Private',
-    drive_fare: 'Services',
+    drive_fare: '12.5$',
     
   },
   {
+    id:3,
     job_id: 'AHD4649',
     pickup_date_time: '23:00 Tue, 17 Sep, 2019',
     pickup_postcode: 'TW6 3XQ',
@@ -28,10 +31,11 @@ const data = [
     pickup_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     dropoff_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     service_type: 'Private',
-    drive_fare: 'Services',
+    drive_fare: '12.5$',
     
   },
   {
+    id:4,
     job_id: 'AHD4649',
     pickup_date_time: '23:00 Tue, 17 Sep, 2019',
     pickup_postcode: 'TW6 3XQ',
@@ -39,10 +43,11 @@ const data = [
     pickup_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     dropoff_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     service_type: 'Private',
-    drive_fare: 'Services',
+    drive_fare: '12.5$',
     
   },
   {
+    id:5,
     job_id: 'AHD4649',
     pickup_date_time: '23:00 Tue, 17 Sep, 2019',
     pickup_postcode: 'TW6 3XQ',
@@ -50,11 +55,11 @@ const data = [
     pickup_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     dropoff_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     service_type: 'Private',
-    drive_fare: 'Services',
+    drive_fare: '12.5$',
     
   },
   {
-    id: 6,
+    id:6,
     job_id: 'AHD4649',
     pickup_date_time: '23:00 Tue, 17 Sep, 2019',
     pickup_postcode: 'TW6 3XQ',
@@ -62,10 +67,11 @@ const data = [
     pickup_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     dropoff_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     service_type: 'Private',
-    drive_fare: 'Services',
+    drive_fare: '12.5$',
     
   },
   {
+    id:7,
     job_id: 'AHD4649',
     pickup_date_time: '23:00 Tue, 17 Sep, 2019',
     pickup_postcode: 'TW6 3XQ',
@@ -73,10 +79,11 @@ const data = [
     pickup_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     dropoff_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     service_type: 'Private',
-    drive_fare: 'Services',
+    drive_fare: '12.5$',
     
   },
   {
+    id:8,
     job_id: 'AHD4649',
     pickup_date_time: '23:00 Tue, 17 Sep, 2019',
     pickup_postcode: 'TW6 3XQ',
@@ -84,7 +91,7 @@ const data = [
     pickup_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     dropoff_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     service_type: 'Private',
-    drive_fare: 'Services',
+    drive_fare: '12.5$',
     
   },
   {
@@ -96,10 +103,11 @@ const data = [
     pickup_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     dropoff_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     service_type: 'Private',
-    drive_fare: 'Services',
+    drive_fare: '12.5$',
    
   },
   {
+    id:10,
     job_id: 'AHD4649',
     pickup_date_time: '23:00 Tue, 17 Sep, 2019',
     pickup_postcode: 'TW6 3XQ',
@@ -107,10 +115,11 @@ const data = [
     pickup_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     dropoff_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     service_type: 'Private',
-    drive_fare: 'Services',
+    drive_fare: '12.5$',
     
   },
   {
+    id:11,
     job_id: 'AHD4649',
     pickup_date_time: '23:00 Tue, 17 Sep, 2019',
     pickup_postcode: 'TW6 3XQ',
@@ -118,10 +127,11 @@ const data = [
     pickup_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     dropoff_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     service_type: 'Private',
-    drive_fare: 'Services',
+    drive_fare: '12.5$',
     
   },
   {
+    id:12,
     job_id: 'AHD4649',
     pickup_date_time: '23:00 Tue, 17 Sep, 2019',
     pickup_postcode: 'TW6 3XQ',
@@ -129,10 +139,11 @@ const data = [
     pickup_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     dropoff_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     service_type: 'Private',
-    drive_fare: 'Services',
+    drive_fare: '12.5$',
     
   },
   {
+    id:13,
     job_id: 'AHD4649',
     pickup_date_time: '23:00 Tue, 17 Sep, 2019',
     pickup_postcode: 'TW6 3XQ',
@@ -140,10 +151,11 @@ const data = [
     pickup_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     dropoff_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     service_type: 'Private',
-    drive_fare: 'Services',
+    drive_fare: '12.5$',
     
   },
   {
+    id:14,
     job_id: 'AHD4649',
     pickup_date_time: '23:00 Tue, 17 Sep, 2019',
     pickup_postcode: 'TW6 3XQ',
@@ -151,10 +163,11 @@ const data = [
     pickup_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     dropoff_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     service_type: 'Private',
-    drive_fare: 'Services',
+    drive_fare: '12.5$',
     
   },
   {
+    id:15,
     job_id: 'AHD4649',
     pickup_date_time: '23:00 Tue, 17 Sep, 2019',
     pickup_postcode: 'TW6 3XQ',
@@ -162,7 +175,7 @@ const data = [
     pickup_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     dropoff_address: 'LHR Terminal 4 World Duty Free, Longford, Hoston, London',
     service_type: 'Private',
-    drive_fare: 'Services',
+    drive_fare: '12.5$',
     
   },
 ]

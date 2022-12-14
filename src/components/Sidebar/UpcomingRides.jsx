@@ -64,7 +64,7 @@ const UpcomingRides = () => {
                       <td>{user['drpoff_poostcode']}</td>
                       <td>{user['pickup_address']}</td>
                       <td>{user['dropoff_address']}</td>
-                      <td>{user['service']}</td>
+                      <td>{user['service_type']}</td>
                       <td>{user['drive_fare']}</td>
 
                       <td>
@@ -80,7 +80,7 @@ const UpcomingRides = () => {
                     <>
                       {expandedRows.includes(user.id) ? (
                         <tr>
-                          <td colspan="6">
+                          <td colspan="10">
                             <div
                               style={{
                                 backgroundColor: 'grey',
