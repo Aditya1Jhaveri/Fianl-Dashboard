@@ -44,24 +44,28 @@ const UpcomingRides = () => {
               <thead>
                 <tr>
                   <th></th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>e-mail</th>
-                  <th>Gender</th>
-                  <th>Details</th>
+                  <th>Job id</th>
+                  <th>Pickup Date&Time</th>
+                  <th>Pickup Postcode</th>
+                  <th>Dropoff Postcode</th>
+                  <th>Pickup Address</th>
+                  <th>Dropoff Address</th>
+                  <th>Service</th>
+                  <th>Driver Fare</th>
                 </tr>
               </thead>
               <tbody>
                 {data.map((user) => (
                   <>
                     <tr key={user.id}>
-                      <td>
-                        {/* <img src={user['photo']} alt="C:\Users\sonip\OneDrive\Pictures\Pictures\Pho" /> */}
-                      </td>
-                      <td>{user['first_name']}</td>
-                      <td>{user['last_name']}</td>
-                      <td>{user['email']}</td>
-                      <td>{user['gender']}</td>
+                      <td>{user['job_id']}</td>
+                      <td>{user['pickup_date_time']}</td>
+                      <td>{user['pickup_postcode']}</td>
+                      <td>{user['drpoff_poostcode']}</td>
+                      <td>{user['pickup_address']}</td>
+                      <td>{user['dropoff_address']}</td>
+                      <td>{user['service']}</td>
+                      <td>{user['drive_fare']}</td>
 
                       <td>
                         <Button
