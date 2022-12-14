@@ -43,7 +43,6 @@ const UpcomingRides = () => {
             <Table>
               <thead>
                 <tr>
-                  <th></th>
                   <th>Job id</th>
                   <th>Pickup Date&Time</th>
                   <th>Pickup Postcode</th>
@@ -52,6 +51,7 @@ const UpcomingRides = () => {
                   <th>Dropoff Address</th>
                   <th>Service</th>
                   <th>Driver Fare</th>
+                  <th>Confirm</th>
                 </tr>
               </thead>
               <tbody>
