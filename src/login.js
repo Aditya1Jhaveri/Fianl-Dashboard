@@ -1,35 +1,9 @@
-import { Button } from "react-bootstrap";
-import React from "react";
-// import { useNavigate } from "react-router-dom";
-// import head from "./head";
-function Login() {
-  // const [use_email,setEmail]=useState("");
-  //  const [use_pwd,setPassword]=useState("");
-  //const navigate = useNavigate();
-  // useEffect(() =>u
-  // {
-  //     if(localStorage.getItem('user-info'))
-  //     {
-  //             history.push("\dashboard");
-  //     }
-  // },[])
-  function login() {
-    // console.warn(use_email,use_pwd);
-    // let item = {use_email,use_pwd};
-    // let result=await fetch("http://localhost:8000/api/login",{
-    //     method:"post",
-    //     body:JSON.stringify({use_email,use_pwd}),
-    //     headers:{
-    //         "Content-Type":"application/json",
-    //         //"Accept":"application/json"
-    //     },
+import { Button } from 'react-bootstrap'
+import React from 'react'
 
-    // });
-    // result = await result.json();
-    // console.warn(result);
-    //localStorage.setItem(JSON.stringify(result))
-    //navigate('/dashboard');
-    window.location.href = "Navbar";
+function Login() {
+  function login() {
+    window.location.href = 'Navbar'
   }
   return (
     <div>
@@ -53,7 +27,7 @@ function Login() {
         </Button>
       </div>
     </div>
-  );
+  )
 }
 
-export default Login;
+export default Login
