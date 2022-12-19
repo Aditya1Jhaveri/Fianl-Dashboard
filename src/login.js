@@ -1,40 +1,65 @@
-import { Button } from 'react-bootstrap'
-import React from 'react'
-import log from './log.css'
-
+import { Button } from "react-bootstrap";
+import React ,{useState,useEffect} from "react";
+import { useNavigate } from "react-router-dom";
+// import head from "./head";
 function Login() {
-  function login() {
-    window.location.href = 'Navbar'
+  const [DriverID,setEmail]=useState("");
+   const [Password,setPassword]=useState("");
+  const navigate = useNavigate();
+  useEffect(() =>
+  {
+      if(localStorage.getItem('user-info'))
+      {
+              // navigate("/dashboard");
+      }
+  },[])
+  async function login() {
+    console.log(DriverID,Password);
+    let item = {DriverID,Password};
+    let result=await fetch("https://driverportalapi.adsdev.uk/1/Authentication",{
+        method:"post",
+        body:JSON.stringify({DriverID,Password}),
+        headers:{
+            "Content-Type":"application/json",  
+            "Accept":"application/json"
+        },
+
+    });
+    result = await result.json();
+    console.log(result);
+    localStorage.setItem('result', JSON.stringify(result))
+    navigate('/dashboard');
+    window.location.href = "Navbar";
   }
   return (
-    <section>
-      <form>
-    <div className='log'>
-      {/* <h1>Login page</h1> */}
+    <div>
+      <h1>Login page</h1>
       <br />
       <div className="col-sm-6 offset-sm-3">
         <input
-          id='username'
           type="text"
           placeholder="Enter Driver ID"
           className="form-control"
+          onChange={(event) => {
+            setEmail(event.target.value)
+          }}
         ></input>
         <br />
         <input
-        id='password'
           type="password"
           placeholder="Enter PIN"
           className="form-control"
+          onChange={(event) => {
+            setPassword(event.target.value)
+          }}
         ></input>
         <br />
-        <Button className="btn btn-primary" onClick={login} style={{ }} >
+        <Button className="btn btn-primary" onClick={login}>
           Login
         </Button>
       </div>
     </div>
-    </form>
-    </section>
-    )
+  );
 }
 
-export default Login
+export default Login;
