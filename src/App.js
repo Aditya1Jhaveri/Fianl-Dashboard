@@ -14,7 +14,7 @@ function App() {
   return (
     <Routes>
       <Route exact path="/" element={<Login />} />
-
+      <Route path="/" element={<Login />}></Route>
       <Route exact path="/Navbar" element={<Navbar />} />
       <Route path="/" element={<Dashboard />} />
       <Route path="/upcomingrides" element={<UpcomingRides />} />
