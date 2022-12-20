@@ -1,11 +1,11 @@
 import { Button } from "react-bootstrap";
 import React ,{useState,useEffect} from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 // import head from "./head";
 function Login() {
   const [DriverID,setEmail]=useState("");
    const [Password,setPassword]=useState("");
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   useEffect(() =>
   {
       if(localStorage.getItem('user-info'))
@@ -27,9 +27,14 @@ function Login() {
     });
     result = await result.json();
     console.log(result);
-    localStorage.setItem('result', JSON.stringify(result))
-    navigate('/dashboard');
-    window.location.href = "Navbar";
+    if(result.response)
+    {
+      localStorage.setItem('result', JSON.stringify(result))  
+
+      // Navigate('/Navbar');
+      window.location.href = "Navbar";
+    }
+ 
   }
   return (
     <div>
