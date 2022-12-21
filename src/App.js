@@ -8,12 +8,13 @@ import { Routes, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Navbar from '../src/components/Navigation/Navbar'
 import Login from './login.js'
+import LoginMain from './LoginMain'
 // import Aditya from './aditya';
 
 function App() {
   return (
     <Routes>
-      <Route exact path="/" element={<Login />} />
+      <Route exact path="/" element={<LoginMain />} />
       <Route path="/" element={<Login />}></Route>
       <Route exact path="/Navbar" element={<Navbar />} />
       <Route path="/" element={<Dashboard />} />

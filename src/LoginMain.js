@@ -1,12 +1,10 @@
-// import { Button } from "react-bootstrap";
-import React ,{useState,useEffect} from "react";
-import { Navigate } from "react-router-dom";
-// import head from "./head";
-function Login() {
-  const [DriverID,setEmail]=useState("");
-   const [Password,setPassword]=useState("");
-  // const navigate = useNavigate();
-  useEffect(() =>
+import React, { useState, useEffect} from "react";
+import './App.css'
+export const LoginMain = (props) => {
+    const [DriverID, setEmail] = useState('');
+    const [Password, setPassword] = useState('');
+
+    useEffect(() =>
   {
       if(localStorage.getItem('user-info'))
       {
@@ -36,12 +34,19 @@ function Login() {
     }
  
   }
-  return (
-    <div className="wlog">
-      <h1>Login page</h1>
-      <br />
-      <div className="">
-        <input
+
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     console.log(DriverID,Password);
+    // }
+    
+
+    return (
+        <div className="App">        
+        <div className="auth-form-container">
+            <h2>Login</h2>
+                <label htmlFor="email">DriverID</label>
+                <input
           type="text"
           placeholder="Enter Driver ID"
           // className="form-control"
@@ -50,6 +55,7 @@ function Login() {
           }}
         ></input>
         <br />
+        
         <input
           type="password"
           placeholder="Enter PIN"
@@ -58,13 +64,12 @@ function Login() {
             setPassword(event.target.value)
           }}
         ></input>
-        <br />
-        <button className="btn btn-primary" onClick={login}>
-          Login
-        </button>
-      </div>
-    </div>
-  );
+                <button type="submit" onClick={login}>Log In</button>
+            {/* <button className="link-btn" onClick={() => props.onFormSwitch('register')}>Don't have an account? Register here.</button> */}
+        </div>
+        </div>
+
+    )
 }
 
-export default Login;
+export default LoginMain;
