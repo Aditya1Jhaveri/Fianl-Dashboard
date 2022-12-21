@@ -32,7 +32,7 @@ function Login() {
       localStorage.setItem('result', JSON.stringify(result))  
 
       // Navigate('/Navbar');
-      window.location.href = "Navbar";
+      window.location.href = "upcomingrides";
     }
  
   }
