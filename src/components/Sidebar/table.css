@@ -1,22 +1,10 @@
 body{
     font-family: sans-serif;
-    /* background: linear-gradient(104deg, #ffffff, #00324a); */
+
     position: relative;
   }
 
-  /* td,th
-  {
-    padding: 12px;
-    border: 1px solid #ccc;
-    text-align: center;
-  } */
-
-  /* thead
-  {
-    padding: 15px;
-    border: 1px solid rgb(242, 3, 3);
-    text-align: center;
- } */
+ 
 
  tr:nth-of-type(odd){
     background-color: rgb(253, 236, 0);
@@ -27,8 +15,46 @@ body{
     color: rgb(255, 253, 253);
   }
 
-/* .table {
-  width: 100%;
-  background-color: red;
-} */
 
+  @media screen and (max-width: 1000px) {
+    thead#example th:nth-child(5)
+    {
+      display: none;
+    } 
+    thead#example th:nth-child(6)
+    {
+      display: none;
+    } 
+    thead#example th:nth-child(8)
+    {
+      display: none;
+    } 
+    
+    
+    tbody#exam td:nth-child(5) {
+      display: none;
+    }
+    tbody#exam td:nth-child(6) {
+      display: none;
+    }
+     tbody#exam td:nth-child(8) {
+      display: none;
+    }
+   
+  }
+
+
+  @media screen and (min-width: 1000px) {
+    thead#example th:nth-child(9)
+    {
+      display: none;
+    } 
+
+    tbody#exam td:nth-child(9) {
+      display: none;
+    }
+  }
+
+
+
+  
