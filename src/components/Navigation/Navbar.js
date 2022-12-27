@@ -4,7 +4,6 @@ import { FaBars } from 'react-icons/fa'
 import Sidebar from '../Sidebar'
 
 const Navbar = () => {
-  debugger
   const [sidebar, setSidebar] = useState(false)
 
   const showSiderbar = () => setSidebar(!sidebar)

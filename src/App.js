@@ -9,7 +9,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Navbar from '../src/components/Navigation/Navbar'
 
 import LoginMain from './LoginMain'
-// import Aditya from './aditya';
 
 function App() {
   return (

@@ -43,26 +43,34 @@ export const LoginMain = (props) => {
   return (
     <div className="App">
       <div className="auth-form-container">
-        <h2>Login</h2>
-        <label htmlFor="email">DriverID</label>
-        <input
-          type="text"
-          placeholder="Enter Driver ID"
-          // className="form-control"
-          onChange={(event) => {
-            setEmail(event.target.value)
-          }}
-        ></input>
-        <br />
+        <h2 style={{}}>Login</h2>
+        {/* <label htmlFor="email">DriverID</label> */}
+        <form autoComplete="on">
+          <label for="dname" />
+          <input
+            type="text"
+            id="dname"
+            name="dname"
+            placeholder="Enter Driver ID"
+            required
+            onChange={(event) => {
+              setEmail(event.target.value)
+            }}
+          />
+          <br />
+          <label for="piname" />
+          <input
+            type="password"
+            id="piname"
+            name="piname"
+            placeholder="Enter PIN"
+            required
+            onChange={(event) => {
+              setPassword(event.target.value)
+            }}
+          />
+        </form>
 
-        <input
-          type="password"
-          placeholder="Enter PIN"
-          // className="form-control"
-          onChange={(event) => {
-            setPassword(event.target.value)
-          }}
-        ></input>
         <button type="submit" onClick={login}>
           Log In
         </button>
