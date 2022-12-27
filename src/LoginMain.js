@@ -71,10 +71,11 @@ export const LoginMain = (props) => {
               setPassword(event.target.value)
             }}
           />
+           </form>
           <button type="submit" onClick={login}>
             Log In
           </button>
-        </form>
+       
       </div>
     </div>
   )

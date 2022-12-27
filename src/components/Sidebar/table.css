@@ -26,10 +26,10 @@ body{
     {
       display: none;
     } 
-    thead#example th:nth-child(8)
+    /* thead#example th:nth-child(8)
     {
       display: none;
-    } 
+    }  */
     
     
     tbody#exam td:nth-child(5) {
@@ -38,20 +38,20 @@ body{
     tbody#exam td:nth-child(6) {
       display: none;
     }
-     tbody#exam td:nth-child(8) {
+     /* tbody#exam td:nth-child(8) {
       display: none;
-    }
+    } */
    
   }
 
 
   @media screen and (min-width: 1000px) {
-    thead#example th:nth-child(9)
+    thead#example th:nth-child(8)
     {
       display: none;
     } 
 
-    tbody#exam td:nth-child(9) {
+    tbody#exam td:nth-child(8) {
       display: none;
     }
   }

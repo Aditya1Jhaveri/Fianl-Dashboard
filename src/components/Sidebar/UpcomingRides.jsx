@@ -5,13 +5,11 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
-import { data } from './Users'
 
 import Navbar from '../Navigation/Navbar'
 
 const UpcomingRides = () => {
   const [expandedRows, setExpandedRows] = useState([])
-
   const [expandState, setExpandState] = useState({})
 
   const handleEpandRow = (event, userId) => {
@@ -28,37 +26,37 @@ const UpcomingRides = () => {
 
     setExpandedRows(newExpandedRows)
   }
-  const result = JSON.parse(localStorage.getItem('result'))
-  console.log(result)
-
+  const [data,setData]=useState([])
   useEffect(() => {
-    {
-      table()
-    }
-  }, [])
-  async function table() {
-    let DriverMasterID = result.response.driverMasterID
-    console.log(DriverMasterID)
-
-    let table = await fetch(
-      'https://driverportalapi.adsdev.uk/1/UpcomingRaids',
-      {
-        method: 'post',
-        // mode: 'cors',
-        body: JSON.stringify({ DriverMasterID }),
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
+    
+   
+    const result = JSON.parse(localStorage.getItem('result'))
+    console.log(result)
+ 
+    let DriverMasterID = result.response.driverMasterID;  
+    
+    console.log(DriverMasterID);
+       fetch(
+        'https://driverportalapi.adsdev.uk/1/UpcomingRaids',
+        {
+          method: 'post',
+          // mode: 'cors',
+          body: JSON.stringify({ DriverMasterID }),
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
         },
-      },
-    )
-    table = await table.json()
-    console.log(table)
-    if (table.response) {
-      localStorage.setItem('table', JSON.stringify(table))
-    }
-  }
-
+      ).then((table)=>{
+        table.json().then((resp)=>{
+            console.log("data",resp.response)
+            setData(resp.response)
+           
+        })
+      })
+      
+  },[])  
+  
   return (
     <div>
       <Navbar />
@@ -76,33 +74,32 @@ const UpcomingRides = () => {
                   <th>Pickup Address</th>
                   <th>Dropoff Address</th>
                   <th>Service</th>
-                  <th>Driver Fare</th>
+                  {/* <th>Driver Fare</th> */}
                   <th>Confirm</th>
                 </tr>
               </thead>
               <tbody id="exam">
-                {data.map((user) => (
+                {data.map((user,i) => (
                   <>
-                    <tr key={user.id}>
-                      <td>{user['job_id']}</td>
-                      <td>{user['pickup_date_time']}</td>
-                      <td>{user['pickup_postcode']}</td>
-                      <td>{user['drpoff_poostcode']}</td>
-                      <td>{user['pickup_address']}</td>
-                      <td>{user['dropoff_address']}</td>
-                      <td>{user['service_type']}</td>
-                      <td>{user['drive_fare']}</td>
+                    <tr key={i}>
+                      <td>{user.jobNo}</td>
+                      <td>{user.pickUpDateTime}</td>
+                      <td>{user.pickUpPostCode}</td>
+                      <td>{user.dropoffPostCode}</td>
+                      <td>{user.pickupAddressLine}</td>
+                      <td>{user.dropoffAddressLine}</td>
+                      <td>{user.serviceType}</td>
                       <td>
                         <Button
                           // variant="link"
-                          onClick={(event) => handleEpandRow(event, user.id)}
+                          onClick={(event) => handleEpandRow(event, i)}
                         >
-                          {expandState[user.id] ? 'Hide' : 'Show'}
+                          {expandState[i] ? 'Hide' : 'Show'}
                         </Button>
                       </td>
                     </tr>
                     <>
-                      {expandedRows.includes(user.id) ? (
+                      {expandedRows.includes(i) ? (
                         <tr>
                           <td colspan="10">
                             <div
@@ -116,20 +113,22 @@ const UpcomingRides = () => {
                               <ul>
                                 <li>
                                   <span>
-                                    <b>Full Name:</b>
+                                    <b>Pickup Address:</b>
                                   </span>{' '}
                                   <span>
                                     {' '}
-                                    {user['first_name']} {user['last_name']}{' '}
+                                    {user.pickupAddressLine}
                                   </span>
                                 </li>
+                                <br />
                                 <li>
                                   <span>
-                                    <b>Company:</b>
+                                    <b>Dropoff Address:</b>
                                   </span>{' '}
-                                  <span> {user.company} </span>
+                                  <span> {user.dropoffAddressLine} </span>
                                 </li>
-                                <li>
+
+                                {/* <li>
                                   <span>
                                     <b>Department:</b>
                                   </span>{' '}
@@ -147,7 +146,8 @@ const UpcomingRides = () => {
                                     <b>About:</b>
                                   </span>{' '}
                                   <span> {user.about} </span>
-                                </li>
+                                </li> */}
+
                               </ul>
                             </div>
                           </td>
@@ -156,7 +156,7 @@ const UpcomingRides = () => {
                     </>
                   </>
                 ))}
-              </tbody>
+              </tbody>
             </Table>
           </div>
         </Col>
