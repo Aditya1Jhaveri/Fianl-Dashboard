@@ -17,6 +17,13 @@ import SidebarItem from '../SidebarItem'
 
 
 const Sidebar = ({ active }) => {
+  const flougout=((e)=>{
+    localStorage.removeItem('result')
+    window.location.href='/'
+  })
+
+
+  
 
   const closeSidebar = () => {
     active(false)
@@ -27,7 +34,7 @@ const Sidebar = ({ active }) => {
       <FaTimes onClick={closeSidebar} />  
       <Content>
 
-         <Link to='/'>
+         <Link to=''>
         <SidebarItem Icon={FaHome} Text="Dashboard" />
          </Link>
 
@@ -35,9 +42,9 @@ const Sidebar = ({ active }) => {
         <SidebarItem Icon={FaChartBar} Text="Upcoming Rides" />
         </Link>
 
-        <Link to='/Logout'>
+        <a onClick={flougout}>
         <SidebarItem Icon={FiLogOut} Text="Logout" />
-        </Link>
+        </a>
         
         
       </Content>

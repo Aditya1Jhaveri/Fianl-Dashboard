@@ -7,11 +7,33 @@ export const LoginMain = (props) => {
   const [Password, setPassword] = useState('')
   // console.log(DriverID, Password)
 
+  const [submitted, setSubmitted] = useState(false)
+const handleSubmit = () => {
+  console.log("form is submited")
+  setSubmitted(true)
+}
   useEffect(() => {
+
+    const keyDownHandler = event => 
+    {console.log('user pressed: ', event.key);
+     
+    if (event.key === 'Enter'){
+      event.preventDefault();
+
+      handleSubmit();
+    }
+  };
     if (localStorage.getItem('user-info')) {
       // navigate("/dashboard");
+
     }
-  }, [])
+  }, 
+  [])
+  // document.addEventListener('keydown', keyDownHandler);
+    
+  // return () => {
+  //   document.removeEventListener('keydown',keyDownHandler)
+  // }
   async function login() {
     let item = { DriverID, Password }
 
@@ -40,6 +62,7 @@ export const LoginMain = (props) => {
   //     e.preventDefault();
   //     console.log(DriverID,Password);
   // }
+  
 
   return (
     <div className="App">
@@ -71,11 +94,11 @@ export const LoginMain = (props) => {
               setPassword(event.target.value)
             }}
           />
-           </form>
+          </form>
           <button type="submit" onClick={login}>
             Log In
           </button>
-       
+        
       </div>
     </div>
   )

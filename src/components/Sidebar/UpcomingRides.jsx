@@ -58,11 +58,20 @@ const UpcomingRides = () => {
   },[])  
   
   return (
+   
     <div>
+      
       <Navbar />
-
+      
+      <div>
+      <button className='refresh'  >
+      {/* onClick={(Refresh)} */}  </button>
+      Refresh
       <Row>
+      
         <Col lg={150}>
+        
+    
           <div style={{ margin: 50 }} className="table-responsive">
             <Table className="table table-bordered">
               <thead id="example">
@@ -72,7 +81,7 @@ const UpcomingRides = () => {
                   <th>Pickup Postcode</th>
                   <th>Dropoff Postcode</th>
                   <th>Pickup Address</th>
-                  <th>Dropoff Address</th>
+
                   <th>Service</th>
                   {/* <th>Driver Fare</th> */}
                   <th>Confirm</th>
@@ -87,7 +96,6 @@ const UpcomingRides = () => {
                       <td>{user.pickUpPostCode}</td>
                       <td>{user.dropoffPostCode}</td>
                       <td>{user.pickupAddressLine}</td>
-                      <td>{user.dropoffAddressLine}</td>
                       <td>{user.serviceType}</td>
                       <td>
                         <Button
@@ -159,9 +167,13 @@ const UpcomingRides = () => {
               </tbody>
             </Table>
           </div>
+          
         </Col>
+       
       </Row>
+      </div>
     </div>
+   
   )
 }
 
