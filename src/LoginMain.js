@@ -7,30 +7,13 @@ export const LoginMain = (props) => {
   const [Password, setPassword] = useState('')
   // console.log(DriverID, Password)
 
-  const [submitted, setSubmitted] = useState(false)
-const handleSubmit = () => {
-  console.log("form is submited")
-  setSubmitted(true)
-}
   useEffect(() => {
-
-    const keyDownHandler = event => 
-    {console.log('user pressed: ', event.key);
-     
-    if (event.key === 'Enter'){
-      event.preventDefault();
-
-      handleSubmit();
-    }
-  };
     if (localStorage.getItem('user-info')) {
       // navigate("/dashboard");
-
     }
-  }, 
-  [])
+  }, [])
   // document.addEventListener('keydown', keyDownHandler);
-    
+
   // return () => {
   //   document.removeEventListener('keydown',keyDownHandler)
   // }
@@ -59,18 +42,17 @@ const handleSubmit = () => {
   }
 
   // const handleSubmit = (e) => {
-  //     e.preventDefault();
-  //     console.log(DriverID,Password);
+  //   e.preventDefault()
+  //   console.log(DriverID, Password)
   // }
-  
 
   return (
     <div className="App">
       <div className="auth-form-container">
         <h2>Login</h2>
         <br />
-        <form autoComplete="on">
-          <label for="dname" />
+        <form>
+          <label />
           <input
             type="text"
             placeholder="Enter Driver ID"
@@ -83,7 +65,7 @@ const handleSubmit = () => {
           />
           <br />
 
-          <label for="piname" />
+          <label />
           <input
             type="password"
             placeholder="Enter PIN"
@@ -94,11 +76,11 @@ const handleSubmit = () => {
               setPassword(event.target.value)
             }}
           />
-          </form>
+          <br />
           <button type="submit" onClick={login}>
             Log In
           </button>
-        
+        </form>
       </div>
     </div>
   )

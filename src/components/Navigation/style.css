@@ -1,6 +1,6 @@
 .navbar{
-     position: relative;
-     overflow: hidden;
+     position: sticky;
+     /* overflow: hidden; */
      height: 50px;
      background-color:rgb(3, 157, 252); 
      box-shadow: 0 0 20px 3px;
