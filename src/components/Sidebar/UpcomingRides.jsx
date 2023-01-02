@@ -69,7 +69,7 @@ const UpcomingRides = () => {
       <Navbar />
       <br />
       <Button onClick={refreshPage} style={{ marginLeft: 28 }}>
-        Refresh
+        <img src="refresh.png "></img>
       </Button>
       {/* <Row> */}
 
