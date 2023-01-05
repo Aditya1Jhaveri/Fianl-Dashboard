@@ -23,7 +23,8 @@ export const LoginMain = (props) => {
     let result = await fetch(
       'https://driverportalapi.adsdev.uk/1/Authentication',
       {
-        method: 'post',
+        method: 'Post',
+        mode: 'cors',
         body: JSON.stringify({ DriverID, Password }),
         headers: {
           'Content-Type': 'application/json',

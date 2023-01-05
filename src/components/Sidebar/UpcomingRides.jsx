@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './table.css'
 
 // import Row from 'react-bootstrap/Row'
@@ -34,6 +34,13 @@ const UpcomingRides = () => {
   function refreshPage() {
     window.location.reload()
   }
+
+  function Maps() {
+    window.open(
+      'https://www.google.co.in/maps/@23.1981517,72.6477201,15z?hl=en',
+    )
+  }
+
   // const [data,setData]=useState([])
   // useEffect(() => {
 
@@ -86,13 +93,14 @@ const UpcomingRides = () => {
                 <th>Dropoff Address</th>
                 <th>Service</th>
                 <th>Confirm</th>
+                <th>Map</th>
               </tr>
             </thead>
             <tbody id="exam">
               {data.map((user) => (
                 <>
                   <tr key={user.id}>
-                    <td data-th="Job id">{user['job_id']}</td>
+                    <td data-th="Job#">{user['job_id']}</td>
                     <td data-th="Pickup Date&Time">
                       {user['pickup_date_time']}
                     </td>
@@ -102,68 +110,77 @@ const UpcomingRides = () => {
                     </td>
                     <td data-th="Pickup Address">{user['pickup_address']}</td>
                     <td data-th="Dropoff Address">{user['dropoff_address']}</td>
-                    <td data-th="Dropoff Address">{user['service_type']}</td>
-                    <td data-th="Job id">
+                    <td data-th="Service">{user['service_type']}</td>
+                    <td>
                       <Button
+                        id="btn"
+                        size="lg,lg"
                         // variant="link"
                         onClick={(event) => handleEpandRow(event, user.id)}
                       >
-                        {expandState[user.id] ? 'Hide' : 'Show'}
+                        {expandState[user.id] ? 'Hide' : 'Full Address'}
                       </Button>
                     </td>
-                  </tr>
-                  <>
                     {expandedRows.includes(user.id) ? (
                       <tr>
                         <td colspan="10">
-                          <div
+                          {/* <div
                             style={{
                               backgroundColor: 'grey',
                               color: 'white',
                               padding: '10px',
                             }}
+                          > */}
+                          <h2
+                            style={{
+                              paddingRight: '200px',
+                            }}
                           >
-                            <h2> Details </h2>
-                            <ul>
-                              <li>
-                                <span>
-                                  <b>Pickup Address:</b>
-                                </span>{' '}
-                                <span> {user['pickup_address']}</span>
-                              </li>
-                              <br />
-                              <li>
-                                <span>
-                                  <b>Dropoff Address:</b>
-                                </span>{' '}
-                                <span> {user['dropoff_address']} </span>
-                              </li>
-
-                              {/* <li>
-                                  <span>
-                                    <b>Department:</b>
-                                  </span>{' '}
-                                  <span> {user.department} </span>
-                                </li>
-                                <li>
-                                  <span>
-                                    <b>Ip:</b>
-                                  </span>{' '}
-                                  <span> {user['ip_address']} </span>
-                                </li>
-
-                                <li>
-                                  <span>
-                                    <b>About:</b>
-                                  </span>{' '}
-                                  <span> {user.about} </span>
-                                </li> */}
-                            </ul>
-                          </div>
+                            Details
+                          </h2>
+                          <ul>
+                            <li>
+                              <span>
+                                <b
+                                  style={{
+                                    position: 'absolute',
+                                    left: '0',
+                                    width: '50%',
+                                    paddingLeft: '2px',
+                                    textAlign: 'left',
+                                  }}
+                                >
+                                  Pickup Address:
+                                </b>
+                              </span>
+                              <span> {user['pickup_address']}</span>
+                            </li>
+                            <br />
+                            <li>
+                              <span>
+                                <b
+                                  style={{
+                                    position: 'absolute',
+                                    left: '0',
+                                    width: '50%',
+                                    paddingLeft: '2px',
+                                    textAlign: 'left',
+                                  }}
+                                >
+                                  Dropoff Address:
+                                </b>
+                              </span>
+                              <span> {user['dropoff_address']} </span>
+                            </li>
+                          </ul>
+                          {/* </div> */}
                         </td>
                       </tr>
                     ) : null}
-                  </>
+                    <td data-th="">
+                      <Button onClick={Maps}>Direction</Button>
+                    </td>
+                  </tr>
                 </>
               ))}
             </tbody>

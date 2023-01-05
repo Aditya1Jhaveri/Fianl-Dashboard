@@ -8,12 +8,10 @@ const Navbar = () => {
 
   const showSiderbar = () => setSidebar(!sidebar)
   return (
-    <div className="navbar">
-      {/* <nav> */}
+    <nav className="navbar">
       <FaBars className="button" onClick={showSiderbar} />
       {sidebar && <Sidebar active={setSidebar} />}
-      {/* </nav> */}
-    </div>
+    </nav>
   )
 }
 
