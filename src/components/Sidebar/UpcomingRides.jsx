@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './table.css'
 
 // import Row from 'react-bootstrap/Row'
@@ -34,42 +34,46 @@ const UpcomingRides = () => {
   function refreshPage() {
     window.location.reload()
   }
+  const [pickupAddressLine, setPickupaddress] = useState([])
+  const [dropoffAddressLine, setDropoffaddress] = useState({})
 
-  function Maps() {
-    window.open(
-      'https://www.google.co.in/maps/@23.1981517,72.6477201,15z?hl=en',
-    )
-  }
+  // function Maps(pickupAddressLine,dropoffAddressLine) {
+  //   let PickupAddress=
+  //   let DropoffAddress=
+  //   window.open(
+  //     'https://www.google.co.in/maps/@23.1981517,72.6477201,15z?hl=en',
+  //   )
+  // }
 
-  // const [data,setData]=useState([])
-  // useEffect(() => {
+  const [data,setData]=useState([])
+  useEffect(() => {
 
-  //   const result = JSON.parse(localStorage.getItem('result'))
-  //   console.log(result)
+    const result = JSON.parse(localStorage.getItem('result'))
+    console.log(result)
 
-  //   let DriverMasterID = result.response.driverMasterID;
+    let DriverMasterID = result.response.driverMasterID;
 
-  //   console.log(DriverMasterID);
-  //      fetch(
-  //       'https://driverportalapi.adsdev.uk/1/UpcomingRaids',
-  //       {
-  //         method: 'post',
-  //         // mode: 'cors',
-  //         body: JSON.stringify({ DriverMasterID }),
-  //         headers: {
-  //           'Content-Type': 'application/json',
-  //           Accept: 'application/json',
-  //         },
-  //       },
-  //     ).then((table)=>{
-  //       table.json().then((resp)=>{
-  //           console.log("data",resp.response)
-  //           setData(resp.response)
+    console.log(DriverMasterID);
+       fetch(
+        'https://driverportalapi.adsdev.uk/1/UpcomingRaids',
+        {
+          method: 'post',
+          // mode: 'cors',
+          body: JSON.stringify({ DriverMasterID }),
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+        },
+      ).then((table)=>{
+        table.json().then((resp)=>{
+            console.log("data",resp.response)
+            setData(resp.response)
 
-  //       })
-  //     })
+        })
+      })
 
-  // },[])
+  },[])
 
   return (
     <div className="wholebody">
@@ -97,33 +101,34 @@ const UpcomingRides = () => {
               </tr>
             </thead>
             <tbody id="exam">
-              {data.map((user) => (
+              {data.map((user,i) => (
                 <>
-                  <tr key={user.id}>
-                    <td data-th="Job#">{user['job_id']}</td>
+                  <tr key={i}>
+                    <td data-th="Job#">{user.jobNo}</td>
                     <td data-th="Pickup Date&Time">
-                      {user['pickup_date_time']}
+                      {user.pickUpDateTime}
                     </td>
-                    <td data-th="Pickup Postcode">{user['pickup_postcode']}</td>
+                    <td data-th="Pickup Postcode">{user.pickUpPostCode}</td>
                     <td data-th="Dropoff Postcode">
-                      {user['drpoff_poostcode']}
+                      {user.dropoffPostCode}
                     </td>
-                    <td data-th="Pickup Address">{user['pickup_address']}</td>
-                    <td data-th="Dropoff Address">{user['dropoff_address']}</td>
-                    <td data-th="Service">{user['service_type']}</td>
+                    <td data-th="Pickup Address">{user.pickupAddressLine}</td>
+                    <td data-th="Dropoff Address">{user.dropoffAddressLine}</td>
+                    <td data-th="Service">{user.serviceType}</td>
                     <td>
                       <Button
+                      
                         id="btn"
                         size="lg,lg"
                         // variant="link"
-                        onClick={(event) => handleEpandRow(event, user.id)}
+                        onClick={(event) => handleEpandRow(event, i)}
                       >
-                        {expandState[user.id] ? 'Hide' : 'Full Address'}
+                        {expandState[i] ? 'Hide' : 'Full Address'}
                       </Button>
                     </td>
-                    {expandedRows.includes(user.id) ? (
+                    {expandedRows.includes(i) ? (
                       <tr>
-                        <td colspan="10">
+                        <td colSpan="10">
                           {/* <div
                             style={{
                               backgroundColor: 'grey',
@@ -153,7 +158,7 @@ const UpcomingRides = () => {
                                   Pickup Address:
                                 </b>
                               </span>
-                              <span> {user['pickup_address']}</span>
+                              <span> {user.pickupAddressLine}</span>
                             </li>
                             <br />
                             <li>
@@ -170,7 +175,7 @@ const UpcomingRides = () => {
                                   Dropoff Address:
                                 </b>
                               </span>
-                              <span> {user['dropoff_address']} </span>
+                              <span> {user.dropoffAddressLine} </span>
                             </li>
                           </ul>
                           {/* </div> */}
@@ -178,7 +183,15 @@ const UpcomingRides = () => {
                       </tr>
                     ) : null}
                     <td data-th="">
-                      <Button onClick={Maps}>Direction</Button>
+                      <Button onClick={()=>{
+                        {
+                          let a = user.pickupAddressLine
+                          let b = user.dropoffAddressLine
+                          // var query = new URLSearchParams();
+                          // query.append(a,b)
+                          window.open('https://www.google.co.in/maps/dir/'+a+'/'+b)
+                      }
+                      }}>Direction</Button>
                     </td>
                   </tr>
                 </>
