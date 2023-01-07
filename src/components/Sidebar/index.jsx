@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 import SidebarItem from '../SidebarItem'
 
 const Sidebar = ({ active }) => {
-  const flougout = (e) => {
+  const flougout = () => {
     localStorage.removeItem('result')
     window.location.href = '/'
   }
@@ -30,9 +30,9 @@ const Sidebar = ({ active }) => {
           <SidebarItem Icon={FaChartBar} Text="Upcoming Rides" />
         </Link>
 
-        <a onClick={flougout}>
+        <Link to onClick={flougout}>
           <SidebarItem Icon={FiLogOut} Text="Logout" />
-        </a>
+        </Link>
       </Content>
     </Container>
   )

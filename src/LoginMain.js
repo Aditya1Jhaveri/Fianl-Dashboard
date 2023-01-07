@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-// import './App.css'
+
 import './log.css'
 
 export const LoginMain = (props) => {
@@ -17,8 +17,9 @@ export const LoginMain = (props) => {
   // return () => {
   //   document.removeEventListener('keydown',keyDownHandler)
   // }
+
   async function login() {
-    let item = { DriverID, Password }
+    // let item = { DriverID, Password }
 
     let result = await fetch(
       'https://driverportalapi.adsdev.uk/1/Authentication',
@@ -42,17 +43,16 @@ export const LoginMain = (props) => {
     }
   }
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   console.log(DriverID, Password)
-  // }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
 
   return (
     <div className="App">
       <div className="auth-form-container">
         <h2>Login</h2>
         <br />
-        <form>
+        <form onSubmit={handleSubmit}>
           <label />
           <input
             type="text"
